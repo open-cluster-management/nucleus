@@ -18,22 +18,22 @@ metadata:
               }
             ],
             "namespace": "open-cluster-management-agent",
-            "registrationImagePullSpec": "quay.io/open-cluster-management/registration",
-            "workImagePullSpec": "quay.io/open-cluster-management/work"
+            "registrationImagePullSpec": "quay.io/open-cluster-management/registration:v0.4.0",
+            "workImagePullSpec": "quay.io/open-cluster-management/work:v0.4.0"
           }
         }
       ]
     capabilities: Basic Install
     categories: Integration & Delivery,OpenShift Optional
     certified: "false"
-    containerImage: quay.io/open-cluster-management/registration-operator:latest
+    containerImage: quay.io/open-cluster-management/registration-operator:v0.4.0
     createdAt: "2021-07-13T20:00:31Z"
     description: Manages the installation and upgrade of the Klusterlet.
     operators.operatorframework.io/builder: operator-sdk-v1.1.0
     operators.operatorframework.io/project_layout: go
     repository: https://github.com/open-cluster-management-io/registration-operator
     support: Red Hat, Inc.
-  name: klusterlet.v0.5.0
+  name: klusterlet.v0.4.0
   namespace: placeholder
 spec:
   apiservicedefinitions: {}
@@ -247,7 +247,7 @@ spec:
               - args:
                 - /registration-operator
                 - klusterlet
-                image: quay.io/open-cluster-management/registration-operator:latest
+                image: quay.io/open-cluster-management/registration-operator:v0.4.0
                 livenessProbe:
                   httpGet:
                     path: /healthz
@@ -293,8 +293,8 @@ spec:
   maturity: alpha
   provider:
     name: Red Hat, Inc.
-  replaces: klusterlet.v0.4.0
+  replaces: klusterlet.v0.3.0
   selector:
     matchLabels:
       app: klusterlet
-  version: 0.5.0
+  version: 0.4.0
